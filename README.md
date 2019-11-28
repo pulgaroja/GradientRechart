@@ -1,2 +1,0 @@
-# GradientRechart
-Created with CodeSandbox
