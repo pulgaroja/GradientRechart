@@ -58,11 +58,11 @@ function App() {
         margin={{ top: 100, right: 30, left: 0, bottom: 0 }}
       >
         <defs>
-          <linearGradient id="blueLineGradient" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="purpleLineGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#A7A7FF" stopOpacity={0.5} />
             <stop offset="95%" stopColor="#A7A7FF" stopOpacity={0} />
           </linearGradient>
-          <linearGradient id="prupleLineGradient" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="blueLineGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#54D8FF" stopOpacity={0.5} />
             <stop offset="95%" stopColor="#54D8FF" stopOpacity={0} />
           </linearGradient>
@@ -70,12 +70,22 @@ function App() {
         <XAxis
           dataKey="name"
           axisLine={{ stroke: "#EAF0F4" }}
-          tick={{ color: "#43425D", fontSize: 11, opacity: 0.3 }}
+          tick={{
+            color: "#43425D",
+            fontFamily: "Source Sans Pro",
+            fontSize: 11,
+            opacity: 0.5
+          }}
           tickLine={false}
         />
         <YAxis
           axisLine={{ stroke: "#EAF0F4" }}
-          tick={{ color: "#43425D", fontSize: 11, opacity: 0.3 }}
+          tick={{
+            color: "#43425D",
+            fontFamily: "Source Sans Pro",
+            fontSize: 11,
+            opacity: 0.5
+          }}
           tickLine={false}
           tickFormatter={value =>
             `$${
@@ -89,21 +99,21 @@ function App() {
         <Tooltip />
         <Area
           type="monotone"
-          dataKey="uv"
-          stroke="#A7A7FF"
-          strokeWidth={2}
-          fillOpacity={1}
-          fill="url(#blueLineGradient)"
-          dot={{ stroke: "#A7A7FF", strokeWidth: 2, fill: "white" }}
-        />
-        <Area
-          type="monotone"
           dataKey="pv"
           stroke="#54D8FF"
           strokeWidth={2}
           fillOpacity={1}
-          fill="url(#prupleLineGradient)"
+          fill="url(#blueLineGradient)"
           dot={{ stroke: "#54D8FF", strokeWidth: 2, fill: "white" }}
+        />
+        <Area
+          type="monotone"
+          dataKey="uv"
+          stroke="#A3A0FB"
+          strokeWidth={2}
+          fillOpacity={1}
+          fill="url(#purpleLineGradient)"
+          dot={{ stroke: "#A3A0FB", strokeWidth: 2, fill: "white" }}
         />
       </AreaChart>
     </ResponsiveContainer>
